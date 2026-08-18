@@ -7,7 +7,7 @@ standfirst: >-
 description: >-
   Most format arguments are really arguments about who reads the artifact next.
   XML for contracts, HTML for the interface, Markdown for the conversation.
-date: 2026-08-18
+date: 2026-05-10
 reading_time: "6 min read"
 tags: [ai-strategy, architecture, decision-craft, agentic-systems]
 pull_quote: >-
@@ -33,7 +33,7 @@ Let's walk through the four formats in active use right now to find the right fr
 
 - **HTML.** The battle-tested presentation classic format. Optimized for humans browsing a rendered artifact. Carries layout, navigation, tables, SVG, code, links, embedded interactivity and much more it accrued over the years. Density compounds because a single document serves both the parser and the eye. This is the format Thariq's argument identifies and the reason Claude-generated dashboards and reports are increasingly delivered as HTML.
 
-- **XML.** Another veteran, the solid rugged contract format. Optimized for parsers, validators, schema-checkers, and language models trained to attend to tag boundaries. Its underrated feature is *mixed content* — the ability to put prose inside structure inside prose without escape-trapping it in a JSON string. Anthropic's own prompting guidance leans on `<context>`, `<example>`, `<instructions>` for the same reason: the boundaries are explicit and the model treats them as load-bearing. Older, slower, yet a force to still be reckoned with.
+- **XML.** Another veteran, the solid rugged contract format. Optimized for parsers, validators, schema-checkers, and language models trained to attend to tag boundaries. Its underrated feature is *mixed content* — the ability to put prose inside structure inside prose without escape-trapping it in a JSON string. Anthropic's own prompting guidance leans on `<context>`, `<example>`, `<instructions>` for the same reason: the boundaries are explicit and the model treats them as load-bearing. Stricter and more verbose than the alternatives, and still a force to be reckoned with.
 
 - **JSON.** The control-plane format. Optimized for compact machine-to-machine traffic where payloads are small, fields are typed, and verbosity is overhead. Tool calls, API responses, configuration, agent control messages — JSON wins because nothing about the message is for a human, and brevity is a feature.
 
