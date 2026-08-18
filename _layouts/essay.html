@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="{{ page.lang | default: site.lang }}">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  {%- comment -%}
+    One call emits title, description, canonical, Open Graph, Twitter cards and
+    JSON-LD. Writing any of that by hand would mean maintaining it by hand.
+  {%- endcomment -%}
+  {% seo %}
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}" />
+  <link rel="alternate" type="application/atom+xml" href="{{ '/feed.xml' | relative_url }}" title="{{ site.title }}" />
+
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('theme');
+        if (saved === 'dark' || saved === 'light') {
+          document.documentElement.setAttribute('data-theme', saved);
+        }
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a href="{{ '/' | relative_url }}" class="brand">
+      <span class="brand__mark">SIGINTENT</span>
+      <span class="brand__name">Antonio Elena · Advisory</span>
+    </a>
+    <nav class="nav">
+      <a href="{{ '/writing/' | relative_url }}">Writing</a>
+      <a href="{{ '/#engagements' | relative_url }}">Engagements</a>
+      <a href="{{ '/#contact' | relative_url }}" class="btn btn--sm">Book an intro call</a>
+    </nav>
+  </div>
+</header>
+
+<main class="essay-page">
+  <article class="container essay">
+    <header class="essay__head">
+      <p class="essay__eyebrow">
+        <a href="{{ '/writing/' | relative_url }}">Writing</a>
+        <span aria-hidden="true">·</span>
+        <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %Y" }}</time>
+        {%- if page.reading_time %}
+        <span aria-hidden="true">·</span>
+        <span>{{ page.reading_time }}</span>
+        {%- endif %}
+      </p>
+      <h1>{{ page.title }}</h1>
+      {%- if page.standfirst %}
+      <p class="essay__standfirst">{{ page.standfirst }}</p>
+      {%- endif %}
+    </header>
+
+    <div class="essay__body">
+      {{ content }}
+    </div>
+
+    <footer class="essay__foot">
+      {%- if page.pull_quote %}
+      <blockquote class="essay__pull">{{ page.pull_quote }}</blockquote>
+      {%- endif %}
+      <p class="essay__bio">
+        Written by <strong>Antonio Elena</strong> — CTO at BEAI Energy, previously Global Head of
+        Architecture &amp; Technology at SGS. He takes on selective advisory work through SIGINTENT:
+        fractional CTO, architecture review and AI strategy.
+        <a href="{{ '/#contact' | relative_url }}">Book an intro call</a>.
+      </p>
+      <p class="essay__nav"><a href="{{ '/writing/' | relative_url }}">← All writing</a></p>
+    </footer>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__inner">
+      <div class="site-footer__brand">
+        <span class="brand__mark">SIGINTENT</span>
+        <p>Independent technology advisory — fractional CTO, cloud, AI and architecture.</p>
+      </div>
+      <div>
+        <h2 class="site-footer__h">Navigate</h2>
+        <ul>
+          <li><a href="{{ '/writing/' | relative_url }}">Writing</a></li>
+          <li><a href="{{ '/#engagements' | relative_url }}">Engagements</a></li>
+          <li><a href="{{ '/#approach' | relative_url }}">Approach</a></li>
+          <li><a href="{{ '/#about' | relative_url }}">About</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="site-footer__h">Elsewhere</h2>
+        <ul>
+          <li><a href="https://aelena.com">aelena.com</a></li>
+          <li><a href="https://www.linkedin.com/in/aelena/">LinkedIn</a></li>
+          <li><a href="{{ '/feed.xml' | relative_url }}">RSS</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+</body>
+</html>

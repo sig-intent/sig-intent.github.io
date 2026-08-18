@@ -476,7 +476,10 @@ section[id] { scroll-margin-top: 80px; }
   grid-template-columns: 1.5fr 1fr 1fr;
   gap: 40px;
 }
-.site-footer h4 {
+/* Footer column headings are h2, not h4: an h2 -> h4 jump broke the heading
+   hierarchy on every page. The class carries the look the h4 used to. */
+.site-footer h4,
+.site-footer__h {
   font-family: var(--f-sans);
   font-size: 0.72rem;
   letter-spacing: 0.16em;
@@ -617,4 +620,197 @@ section[id] { scroll-margin-top: 80px; }
   .site-footer__legal { flex-direction: column; gap: 8px; }
   .writing__item { grid-template-columns: 1fr; gap: 6px; }
   .clients span { flex: 1 1 50%; border-bottom: 1px solid var(--line); }
+}
+
+/* ============================================================
+   Essay and archive pages
+   Long-form prose, measured for reading rather than scanning.
+   ============================================================ */
+
+.essay-page { padding: clamp(48px, 8vw, 96px) 0; }
+
+.essay { max-width: 46rem; }
+
+.essay__head { margin-bottom: clamp(32px, 5vw, 56px); }
+
+.essay__eyebrow {
+  font-family: var(--f-sans);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  display: flex;
+  gap: 0.5rem;
+  align-items: baseline;
+  margin: 0 0 1rem;
+}
+.essay__eyebrow a { color: inherit; }
+
+.essay h1 {
+  font-family: var(--f-serif);
+  font-weight: 400;
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  margin: 0 0 1.25rem;
+}
+
+.essay__standfirst {
+  font-family: var(--f-serif);
+  font-size: clamp(1.1rem, 2.2vw, 1.35rem);
+  line-height: 1.5;
+  color: var(--ink-2);
+  margin: 0;
+}
+
+.essay__body {
+  font-family: var(--f-serif);
+  font-size: 1.075rem;
+  line-height: 1.72;
+  color: var(--ink);
+}
+
+.essay__body > * + * { margin-top: 1.4em; }
+
+.essay__body h2 {
+  font-family: var(--f-sans);
+  font-weight: 600;
+  font-size: 1.3rem;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  margin-top: 2.6em;
+}
+
+.essay__body h3 {
+  font-family: var(--f-sans);
+  font-weight: 600;
+  font-size: 1.05rem;
+  margin-top: 2em;
+}
+
+.essay__body strong { font-weight: 600; }
+
+.essay__body blockquote {
+  margin: 1.8em 0;
+  padding: 0 0 0 1.25rem;
+  border-left: 2px solid var(--line-2);
+  color: var(--ink-2);
+}
+.essay__body blockquote > * + * { margin-top: 1em; }
+
+.essay__body ul,
+.essay__body ol { padding-left: 1.4rem; }
+.essay__body li + li { margin-top: 0.4em; }
+
+.essay__body code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.9em;
+  background: var(--surface);
+  padding: 0.1em 0.35em;
+  border-radius: 3px;
+}
+
+.essay__body pre {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 1rem 1.15rem;
+  overflow-x: auto;
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+.essay__body pre code { background: none; padding: 0; }
+
+.essay__body table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--f-sans);
+  font-size: 0.92rem;
+}
+.essay__body th,
+.essay__body td {
+  border-bottom: 1px solid var(--line);
+  padding: 0.6rem 0.75rem;
+  text-align: left;
+  vertical-align: top;
+}
+.essay__body th { font-weight: 600; color: var(--ink-2); }
+
+.essay__foot {
+  margin-top: clamp(48px, 7vw, 80px);
+  padding-top: 2rem;
+  border-top: 1px solid var(--line);
+}
+
+.essay__pull {
+  font-family: var(--f-serif);
+  font-size: clamp(1.2rem, 2.6vw, 1.6rem);
+  line-height: 1.35;
+  color: var(--ink);
+  margin: 0 0 2rem;
+  padding: 0;
+  border: 0;
+}
+
+.essay__bio {
+  font-family: var(--f-sans);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--ink-2);
+  margin: 0 0 1.5rem;
+}
+
+.essay__nav {
+  font-family: var(--f-sans);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* Archive */
+
+.archive { list-style: none; padding: 0; margin: 0; }
+
+.archive__item + .archive__item {
+  margin-top: 2.5rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.archive__link { text-decoration: none; color: inherit; }
+.archive__link:hover .archive__title { color: var(--ink-2); }
+
+.archive__title {
+  font-family: var(--f-serif);
+  font-weight: 400;
+  font-size: clamp(1.35rem, 3vw, 1.75rem);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.5rem;
+  transition: color 0.2s ease;
+}
+
+.archive__meta {
+  font-family: var(--f-sans);
+  font-size: 0.8rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin: 0 0 0.75rem;
+}
+
+.archive__standfirst {
+  font-family: var(--f-serif);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--ink-2);
+  margin: 0;
+}
+
+.archive__note {
+  margin-top: 3.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+  font-family: var(--f-sans);
+  font-size: 0.88rem;
+  color: var(--ink-3);
 }
