@@ -101,8 +101,8 @@ const DICT = {
 
       writing_eyebrow: "Writing",
       writing_h2: "Notes on technology, architecture and strategy.",
-      writing_lead: "Selected essays and pieces. The full archive lives on GitHub.",
-      writing_view_all: "View the full archive on GitHub",
+      writing_lead: "Essays on the decisions that compound — cloud, AI, architecture and the seams between them.",
+      writing_view_all: "Read all essays",
 
       contact_eyebrow: "Contact",
       contact_h2: "Let's talk.",
@@ -222,8 +222,8 @@ const DICT = {
 
       writing_eyebrow: "Escritos",
       writing_h2: "Notas sobre tecnología, arquitectura y estrategia.",
-      writing_lead: "Ensayos y piezas seleccionadas. El archivo completo vive en GitHub.",
-      writing_view_all: "Ver el archivo completo en GitHub",
+      writing_lead: "Ensayos sobre las decisiones que se acumulan — cloud, IA, arquitectura y las costuras entre ellas.",
+      writing_view_all: "Leer todos los ensayos",
 
       contact_eyebrow: "Contacto",
       contact_h2: "Hablemos.",
