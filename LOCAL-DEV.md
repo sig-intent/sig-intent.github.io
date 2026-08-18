@@ -102,12 +102,22 @@ Jekyll runs Liquid over them — the essay list inside `llms.txt` is generated.
 ## Checking the SEO output before you push
 
 ```bash
-# canonical, description, OG tags
-grep -oE '<title>[^<]*</title>|<link rel="canonical"[^>]*>' _site/writing/<slug>/index.html
-# JSON-LD is valid and has the right type
-python -c "import re,json,io; h=io.open('_site/writing/<slug>/index.html',encoding='utf-8').read(); \
-print(json.loads(re.search(r'application/ld\+json\">(.*?)</script>',h,re.S).group(1))['@type'])"
+python tools/seo-check.py
 ```
+
+Runs the mechanical half of the SEO/GEO checklist over `_site/` — titles,
+descriptions, canonicals, heading hierarchy, alt text, Open Graph, JSON-LD
+validity and shape, `llms.txt`, sitemap. Exits non-zero on anything severe, so it
+can gate a push. Build first; it reads the generated HTML, not the source.
+
+Two findings are expected and accepted rather than fixed: both essay titles run
+past the 60-character SERP limit. They are the essays' actual theses and
+shortening them for a truncation that is purely cosmetic would be the wrong
+trade. If you disagree, the fix is `{% seo title=false %}` in the layout plus a
+hand-written `<title>`, which buys back the 12 characters of ` | SIGINTENT`.
+
+For the half a script cannot do — is this description *good*, is this heading
+citable out of context — run the `seo-geo-audit` skill.
 
 ## Deployment
 
