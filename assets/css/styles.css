@@ -429,28 +429,35 @@ section[id] { scroll-margin-top: 80px; }
 .writing {
   border-top: 1px solid var(--line);
 }
+/* One column: the title gets the whole line and the meta sits under it.
+   This was a three-column grid — 100px for a date, 1fr for the title, auto for
+   the meta — but the separate date element left the markup when the list started
+   being generated from the collection. Two children in a three-column grid put
+   every title inside the 100px column, so long titles wrapped one word per line.
+   Type matches .archive__* so the homepage list and /writing/ read as one site. */
 .writing__item {
   display: grid;
-  grid-template-columns: 100px 1fr auto;
-  gap: 28px;
-  align-items: baseline;
+  grid-template-columns: 1fr;
+  gap: 8px;
   padding: 28px 0;
   border-bottom: 1px solid var(--line);
   transition: padding-left 0.3s ease;
 }
 .writing__item:hover { padding-left: 12px; }
-.writing__date {
-  font-size: 0.78rem;
-  letter-spacing: 0.1em;
-  color: var(--ink-3);
-  text-transform: uppercase;
-}
 .writing__title {
   font-family: var(--f-serif);
-  font-size: 1.2rem;
+  font-size: clamp(1.2rem, 2.4vw, 1.5rem);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
   color: var(--ink);
 }
-.writing__meta { font-size: 0.82rem; color: var(--ink-3); }
+.writing__meta {
+  font-family: var(--f-sans);
+  font-size: 0.8rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
 
 /* closing CTA ------------------------------------------------------------- */
 .closing {
@@ -618,7 +625,6 @@ section[id] { scroll-margin-top: 80px; }
   .contact-grid { grid-template-columns: 1fr; }
   .site-footer__inner { grid-template-columns: 1fr; gap: 32px; }
   .site-footer__legal { flex-direction: column; gap: 8px; }
-  .writing__item { grid-template-columns: 1fr; gap: 6px; }
   .clients span { flex: 1 1 50%; border-bottom: 1px solid var(--line); }
 }
 
