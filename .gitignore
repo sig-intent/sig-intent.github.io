@@ -1,6 +1,17 @@
 _refs/
 next/
 .claude/
+
+# Jekyll
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+vendor/
+
+# Gemfile.lock IS committed: GitHub Pages ignores it, but committing it is what
+# makes a local build reproducible instead of resolving fresh gems every clone.
+
 .DS_Store
 Thumbs.db
 desktop.ini

@@ -1,0 +1,116 @@
+---
+layout: null
+title: Essays on technology strategy and architecture
+description: >-
+  Essays on technology strategy, cloud economics, AI and software architecture —
+  written for the people who have to make the decisions that compound.
+permalink: /writing/
+---
+<!doctype html>
+<html lang="{{ site.lang }}">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  {% seo %}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}" />
+  <link rel="alternate" type="application/atom+xml" href="{{ '/feed.xml' | relative_url }}" title="{{ site.title }}" />
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('theme');
+        if (saved === 'dark' || saved === 'light') {
+          document.documentElement.setAttribute('data-theme', saved);
+        }
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a href="{{ '/' | relative_url }}" class="brand">
+      <span class="brand__mark">SIGINTENT</span>
+      <span class="brand__name">Antonio Elena · Advisory</span>
+    </a>
+    <nav class="nav">
+      <a href="{{ '/writing/' | relative_url }}">Writing</a>
+      <a href="{{ '/#engagements' | relative_url }}">Engagements</a>
+      <a href="{{ '/#contact' | relative_url }}" class="btn btn--sm">Book an intro call</a>
+    </nav>
+  </div>
+</header>
+
+<main class="essay-page">
+  <div class="container essay">
+    <header class="essay__head">
+      <p class="essay__eyebrow">Writing</p>
+      <h1>Essays</h1>
+      <p class="essay__standfirst">
+        Most technology decisions are framed wrong before they are answered. These are attempts to
+        fix the question. Written for founders, CTOs and executive teams — not as tutorials.
+      </p>
+    </header>
+
+    <div class="essay__body">
+      <ul class="archive">
+        {%- assign essays = site.writing | sort: "date" | reverse -%}
+        {%- for essay in essays %}
+        <li class="archive__item">
+          <a class="archive__link" href="{{ essay.url | relative_url }}">
+            <h2 class="archive__title">{{ essay.title }}</h2>
+          </a>
+          <p class="archive__meta">
+            <time datetime="{{ essay.date | date_to_xmlschema }}">{{ essay.date | date: "%B %Y" }}</time>
+            {%- if essay.reading_time %} · {{ essay.reading_time }}{% endif %}
+          </p>
+          {%- if essay.standfirst %}
+          <p class="archive__standfirst">{{ essay.standfirst }}</p>
+          {%- endif %}
+        </li>
+        {%- endfor %}
+      </ul>
+
+      <p class="archive__note">
+        <a href="{{ '/feed.xml' | relative_url }}">RSS</a> ·
+        older notes, book summaries and assorted writing live at
+        <a href="https://github.com/aelena/writings">github.com/aelena/writings</a>.
+      </p>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__inner">
+      <div class="site-footer__brand">
+        <span class="brand__mark">SIGINTENT</span>
+        <p>Independent technology advisory — fractional CTO, cloud, AI and architecture.</p>
+      </div>
+      <div>
+        <h2 class="site-footer__h">Navigate</h2>
+        <ul>
+          <li><a href="{{ '/writing/' | relative_url }}">Writing</a></li>
+          <li><a href="{{ '/#engagements' | relative_url }}">Engagements</a></li>
+          <li><a href="{{ '/#approach' | relative_url }}">Approach</a></li>
+          <li><a href="{{ '/#about' | relative_url }}">About</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="site-footer__h">Elsewhere</h2>
+        <ul>
+          <li><a href="https://aelena.com">aelena.com</a></li>
+          <li><a href="https://www.linkedin.com/in/aelena/">LinkedIn</a></li>
+          <li><a href="{{ '/feed.xml' | relative_url }}">RSS</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+</body>
+</html>

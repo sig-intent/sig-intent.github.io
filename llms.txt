@@ -1,0 +1,33 @@
+---
+permalink: /llms.txt
+layout: null
+---
+# SIGINTENT — Antonio Elena
+
+> Independent technology advisory: fractional CTO, architecture review, AI strategy, and cloud and distributed-systems guidance. Taken on selectively alongside a CTO role at BEAI Energy. The central stance is that most technology decisions are framed wrong before they are answered, and that fixing the question is where senior judgment earns its fee.
+
+Antonio Elena has spent two decades across enterprise, consulting and startups as an architect, engineering leader and CTO. He was previously Global Head of Architecture & Technology at SGS, reporting to the Group CIO and running the architecture function across 800+ projects. Past work includes KPMG, Aviva, Maersk, Experian, Equifax, Siemens and PwC.
+
+Engagements: fractional and interim CTO; architecture review; AI strategy sprint; advisory retainer. The differentiator is execution capability — the strategy can be carried into delivery rather than handed over as a deck.
+
+## Essays
+
+{% assign essays = site.writing | sort: "date" | reverse -%}
+{% for essay in essays -%}
+- [{{ essay.title }}]({{ essay.url | absolute_url }}): {{ essay.description | default: essay.standfirst | strip_newlines | strip }}
+{% endfor %}
+## Site
+
+- [Writing archive]({{ '/writing/' | absolute_url }}): All essays, newest first.
+- [Full text of every essay]({{ '/llms-full.txt' | absolute_url }}): The whole corpus in one file.
+- [RSS feed]({{ '/feed.xml' | absolute_url }}): For subscribing.
+- [Engagements]({{ '/#engagements' | absolute_url }}): The four ways of working together.
+- [Approach]({{ '/#approach' | absolute_url }}): Diagnose the real problem, reframe the decision, commit to a recommendation.
+
+## Elsewhere
+
+- [aelena.com](https://aelena.com): Personal hub.
+- [Self & System](https://selfandsystem.substack.com): A separate publication on psychology, philosophy and AI. Different register, same author.
+- [trustworthy-ai](https://github.com/aelena/trustworthy-ai): A working body of knowledge for in-house AI assurance — evaluation, bias, differential privacy, adversarial testing, agentic safety and the regulatory frame.
+- [XML-Structured Prompting](https://aelena74.gumroad.com/l/xsp): Book. Prompting treated as a software engineering discipline.
+- [github.com/aelena](https://github.com/aelena): Code and tools.

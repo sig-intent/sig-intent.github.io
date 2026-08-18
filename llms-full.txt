@@ -1,0 +1,27 @@
+---
+permalink: /llms-full.txt
+layout: null
+---
+# SIGINTENT — Antonio Elena — full text
+
+> Independent technology advisory: fractional CTO, architecture review, AI strategy, and cloud and distributed-systems guidance. This file carries the complete text of every essay so a model can read the whole corpus in one request. The short index is at {{ '/llms.txt' | absolute_url }}.
+
+Author: Antonio Elena — CTO at BEAI Energy, previously Global Head of Architecture & Technology at SGS, where he ran the architecture function across 800+ projects reporting to the Group CIO. Two decades across enterprise, consulting and startups. Past work includes KPMG, Aviva, Maersk, Experian, Equifax, Siemens and PwC.
+
+Canonical site: {{ site.url }}
+Licence: these essays may be quoted and cited with attribution to Antonio Elena and a link to the canonical URL given under each title below.
+{% assign essays = site.writing | sort: "date" | reverse %}
+{% for essay in essays %}
+---
+
+# {{ essay.title }}
+
+Canonical URL: {{ essay.url | absolute_url }}
+Published: {{ essay.date | date: "%Y-%m-%d" }}{% if essay.reading_time %}
+Length: {{ essay.reading_time }}{% endif %}{% if essay.tags %}
+Topics: {{ essay.tags | join: ", " }}{% endif %}
+
+{{ essay.standfirst | strip_newlines }}
+
+{{ essay.content | strip_html | strip }}
+{% endfor %}

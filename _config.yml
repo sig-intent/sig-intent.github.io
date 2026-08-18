@@ -1,0 +1,89 @@
+# SIGINTENT — Jekyll configuration
+#
+# GitHub Pages builds this natively on push. There is no CI to maintain and no
+# build step of ours: the three plugins below are on GitHub's allowlist, so
+# GitHub keeps them working rather than us.
+
+title: SIGINTENT
+tagline: Technology strategy, cloud, AI & architecture advisory
+description: >-
+  Independent technology advisory by Antonio Elena. Fractional CTO, cloud, AI
+  strategy and software architecture for founders, CTOs and executive teams
+  facing the decisions that compound.
+url: https://sig-intent.com
+baseurl: ""
+lang: en
+
+author:
+  name: Antonio Elena
+  url: https://aelena.com
+
+social:
+  name: Antonio Elena
+  links:
+    - https://www.linkedin.com/in/aelena/
+    - https://github.com/aelena
+
+# jekyll-seo-tag emits title, description, canonical, Open Graph, Twitter cards
+# and JSON-LD from one {% seo %} call.
+# jekyll-sitemap writes sitemap.xml. jekyll-feed writes /feed.xml.
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+# jekyll-feed emits a posts feed *plus* one per configured collection. There are
+# no posts and never will be — the essays are the collection — so the posts feed
+# is parked at an unadvertised path. Pointing both at feed.xml is what silently
+# produced an empty feed: the posts feed was written last and overwrote the
+# essays. The canonical /feed.xml is the essays.
+feed:
+  path: /feed/posts.xml
+  collections:
+    writing:
+      path: /feed.xml
+
+# Essays are a collection rather than posts: no date in the filename, so a
+# permalink stays stable even if the publication date is corrected later.
+collections:
+  writing:
+    output: true
+    permalink: /writing/:name/
+
+# A default social card so nothing is ever shared without one. Per-page
+# override: set `image:` in the front matter.
+twitter:
+  card: summary_large_image
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/img/og-default.png
+  - scope:
+      path: ""
+      type: writing
+    values:
+      layout: essay
+      author: Antonio Elena
+
+# index.html carries minimal front matter so the essay list can be generated
+# from the collection — a hand-maintained list is what let the homepage
+# advertise an essay that did not exist.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - README.md
+  - LOCAL-DEV.md
+  - next
+  - _refs
+  - .claude
+  - tools
+
+# Markdown that does not fight em dashes and quotes.
+markdown: kramdown
+kramdown:
+  input: GFM
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  syntax_highlighter: rouge
