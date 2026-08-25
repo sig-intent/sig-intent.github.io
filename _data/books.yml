@@ -1,0 +1,23 @@
+# Books, listed in the Writing section of the homepage and in llms.txt.
+#
+# Here rather than hardcoded in both places, because there are two of them now
+# and the second one arriving was the moment the duplication would have started
+# drifting. Adding a third is one entry.
+#
+# Newest first: the homepage appends these after the essays, which are sorted by
+# date, so the order in this file is the order they appear.
+
+- title: Build a Tokenizer in C
+  url: https://aelena74.gumroad.com/l/c-tokenizer
+  meta: gumroad.com
+  # For llms.txt, where a machine reader gets one sentence and no page to browse.
+  summary: >-
+    Book. Builds OpenAI's tiktoken tokenizer from scratch in C, base64 decoding
+    up to a complete encoder, over eight chapters. The findings are part of the
+    text: a regex pattern that was wrong on half the inputs, a use-after-free in
+    the arena allocator, and a performance number nobody had measured.
+
+- title: XML-Structured Prompting
+  url: https://aelena74.gumroad.com/l/xsp
+  meta: gumroad.com
+  summary: Book. Prompting treated as a software engineering discipline.

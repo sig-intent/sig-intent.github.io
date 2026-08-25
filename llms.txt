@@ -29,5 +29,7 @@ Engagements: fractional and interim CTO; architecture review; AI strategy sprint
 - [aelena.com](https://aelena.com): Personal hub.
 - [Self & System](https://selfandsystem.substack.com): A separate publication on psychology, philosophy and AI. Different register, same author.
 - [trustworthy-ai](https://github.com/aelena/trustworthy-ai): A working body of knowledge for in-house AI assurance — evaluation, bias, differential privacy, adversarial testing, agentic safety and the regulatory frame.
-- [XML-Structured Prompting](https://aelena74.gumroad.com/l/xsp): Book. Prompting treated as a software engineering discipline.
+{%- for book in site.data.books %}
+- [{{ book.title }}]({{ book.url }}): {{ book.summary }}
+{%- endfor %}
 - [github.com/aelena](https://github.com/aelena): Code and tools.

@@ -280,10 +280,12 @@ permalink: /
         <span class="writing__meta">Essay · {{ essay.date | date: "%B %Y" }}{% if essay.reading_time %} · {{ essay.reading_time }}{% endif %}</span>
       </a>
       {%- endfor %}
-      <a class="writing__item" href="https://aelena74.gumroad.com/l/xsp" target="_blank" rel="noopener">
-        <span class="writing__title">XML-Structured Prompting</span>
-        <span class="writing__meta">Book · gumroad.com</span>
+      {%- for book in site.data.books %}
+      <a class="writing__item" href="{{ book.url }}" target="_blank" rel="noopener">
+        <span class="writing__title">{{ book.title }}</span>
+        <span class="writing__meta">Book · {{ book.meta }}</span>
       </a>
+      {%- endfor %}
     </div>
 
     <p style="margin-top:32px;">
