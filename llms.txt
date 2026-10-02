@@ -14,7 +14,7 @@ Engagements: fractional and interim CTO; architecture review; AI strategy sprint
 
 {% assign essays = site.writing | sort: "date" | reverse -%}
 {% for essay in essays -%}
-- [{{ essay.title }}]({{ essay.url | absolute_url }}): {{ essay.description | default: essay.standfirst | strip_newlines | strip }}
+- [{{ essay.headline | default: essay.title }}]({{ essay.url | absolute_url }}): {{ essay.description | default: essay.standfirst | strip_newlines | strip }}
 {% endfor %}
 ## Site
 

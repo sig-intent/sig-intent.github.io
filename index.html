@@ -12,6 +12,47 @@ permalink: /
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   {% seo %}
+  <meta property="og:locale:alternate" content="es_ES" />
+  <link rel="alternate" type="text/plain" href="{{ '/llms.txt' | absolute_url }}" title="llms.txt" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://aelena.com/#person",
+        "name": "Antonio Elena",
+        "url": "https://aelena.com",
+        "jobTitle": "Chief Technology Officer, architect and author",
+        "worksFor": { "@id": "https://sig-intent.com/#service" },
+        "knowsAbout": ["Software architecture", "Cloud computing", "Artificial intelligence", "Agentic systems", "Technology strategy", "DevOps", "Distributed systems"],
+        "sameAs": ["https://www.linkedin.com/in/aelena/", "https://github.com/aelena", "https://aelena.com", "https://selfandsystem.substack.com"]
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://sig-intent.com/#service",
+        "name": "SIGINTENT",
+        "url": "https://sig-intent.com",
+        "description": "{{ site.description | strip_newlines | strip }}",
+        "founder": { "@id": "https://aelena.com/#person" },
+        "areaServed": ["ES", "EU", "Remote"],
+        "availableLanguage": ["en", "es"],
+        "address": { "@type": "PostalAddress", "addressLocality": "Madrid", "addressCountry": "ES" },
+        "knowsAbout": ["Fractional CTO", "Architecture review", "AI strategy", "Cloud architecture"],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Engagements",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Fractional and Interim CTO", "url": "https://sig-intent.com/#engagements" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Architecture Review", "url": "https://sig-intent.com/#engagements" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI Strategy Sprint", "url": "https://sig-intent.com/#engagements" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Advisory Retainer", "url": "https://sig-intent.com/#engagements" } }
+          ]
+        }
+      }
+    ]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -277,7 +318,7 @@ permalink: /
       {%- assign essays = site.writing | sort: "date" | reverse -%}
       {%- for essay in essays %}
       <a class="writing__item" href="{{ essay.url | relative_url }}">
-        <span class="writing__title">{{ essay.title }}</span>
+        <span class="writing__title">{{ essay.headline | default: essay.title }}</span>
         <span class="writing__meta">Essay · {{ essay.date | date: "%B %Y" }}{% if essay.reading_time %} · {{ essay.reading_time }}{% endif %}</span>
       </a>
       {%- endfor %}

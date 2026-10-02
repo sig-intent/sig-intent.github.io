@@ -62,7 +62,7 @@ permalink: /writing/
         {%- for essay in essays %}
         <li class="archive__item">
           <a class="archive__link" href="{{ essay.url | relative_url }}">
-            <h2 class="archive__title">{{ essay.title }}</h2>
+            <h2 class="archive__title">{{ essay.headline | default: essay.title }}</h2>
           </a>
           <p class="archive__meta">
             <time datetime="{{ essay.date | date_to_xmlschema }}">{{ essay.date | date: "%B %Y" }}</time>

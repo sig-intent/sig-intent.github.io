@@ -14,7 +14,7 @@ Licence: these essays may be quoted and cited with attribution to Antonio Elena 
 {% for essay in essays %}
 ---
 
-# {{ essay.title }}
+# {{ essay.headline | default: essay.title }}
 
 Canonical URL: {{ essay.url | absolute_url }}
 Published: {{ essay.date | date: "%Y-%m-%d" }}{% if essay.reading_time %}

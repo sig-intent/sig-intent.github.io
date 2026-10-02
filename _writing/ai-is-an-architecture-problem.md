@@ -1,5 +1,6 @@
 ---
-title: "AI is an architecture problem, not just a model problem"
+title: "AI is an architecture problem"
+headline: "AI is an architecture problem, not just a model problem"
 standfirst: >-
   The gap between a working demo and a shipped feature is not the model. It is
   the data pipeline, the retry semantics, the eval harness, the cost ceiling and

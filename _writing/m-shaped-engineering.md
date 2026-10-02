@@ -1,5 +1,6 @@
 ---
-title: "M-shaped engineering: cheap breadth is why you need more than one depth"
+title: "M-shaped engineering and the second depth"
+headline: "M-shaped engineering: cheap breadth is why you need more than one depth"
 standfirst: >-
   AI collapsed the cost of access to a domain, not the cost of judgment inside
   it. Which makes multiple depths the only thing that lets you audit breadth you

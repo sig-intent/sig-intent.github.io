@@ -1,5 +1,6 @@
 ---
-title: "MD, JSON, HTML or XML: pick the format for the next reader"
+title: "Pick the format for the next reader"
+headline: "MD, JSON, HTML or XML: pick the format for the next reader"
 standfirst: >-
   HTML beats Markdown for AI-generated artifacts. The argument is correct, and it
   is also incomplete — because the question underneath it is who has to read this

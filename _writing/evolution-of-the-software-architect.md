@@ -1,5 +1,6 @@
 ---
-title: "The evolution of the software architect: from builder to system designer"
+title: "The evolution of the software architect"
+headline: "The evolution of the software architect: from builder to system designer"
 standfirst: >-
   Twenty years ago the job was to draw the diagrams. It is now to frame the
   decisions, and the title has not caught up. What the architect elevator leaves
